@@ -22,7 +22,7 @@ get_header();
 			<section class="cours"></section>
 			<?php
 			/* Start the Loop */
-			$precedant = 0;
+			$precedant = "XXXXXX";
 			while ( have_posts() ) :
 				the_post();
 				$titre = get_the_title();
@@ -35,13 +35,21 @@ get_header();
 				//$resume = substr($contenu, 0, 200);
 				$typeCours = get_field('type_de_cours');
 
-			?>	
+				if ($typeCours != $precedant): 
+					if ("XXXXXX" != $precedant) : ?>
+				</section>
+				<?php endif ?>
+				<h2><?php echo $typeCours ?></h2>
+				<section> <!-- fin section #cours -->
+				<?php endif ?>
+
 			<article>
 				<p><?php echo $sigle . " - " . $typeCours ; ?></p>
 				<a href="<?php echo get_permalink() ?>"><?php echo $titrePartie1; ?></a>
 				<p>Session : <?php echo $session; ?></p>
 			</article>
 			<?php
+			$precedant = $typeCours;
 			endwhile;
 
 		endif;

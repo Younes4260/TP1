@@ -1179,26 +1179,51 @@ body.home .site-title {
   text-decoration: none;
 }
 
+/*--------------------------------------------------------------------------------------------------
+Liste de blocs par type de cours
+-------------------------------------------------------------------------------------------------*/
 .home .cours {
   display: flex;
   flex-direction: column;
 }
 
-article {
+.home .cours section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.home .cours section article {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   border: 1px solid #aaa;
+  width: 29%;
+  margin: 1%;
 }
 
-article p {
-  margin: .3rem;
+.home .cours section article p {
+  margin: .4rem;
   font-size: 1rem;
 }
 
-article a {
+.home .cours section article a {
   font-size: 2rem;
   font-weight: bold;
   text-decoration: none;
+}
+
+@media (min-width: 600px) {
+  .home .cours section article article {
+    width: 45%;
+    margin: 1%;
+  }
+}
+
+@media (min-width: 600px) and (min-width: 1000px) {
+  .home .cours section article article {
+    width: 29%;
+    margin: 1%;
+  }
 }
