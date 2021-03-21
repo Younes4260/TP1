@@ -192,7 +192,7 @@ function extraire_cours_front_page($query){
 
 	$query->set( 'category_name', 'cours' );
 	$query->set('posts_per_page', -1 );
-	$query->set('meta_keys', 'type_de_cours');
+	$query->set('meta_key', 'type_de_cours');
 	$query->set('orderby', array('meta_value' => 'DESC', 'title' => 'ASC'));
 }
 }
