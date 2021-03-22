@@ -1,0 +1,21 @@
+// Début du code liés aux animations de couleur
+@keyframes changementcouleur1 {
+    0% {
+        background-color: rgb(143, 102, 166);
+    }
+
+    100% {
+        background-color: white;
+    }
+}
+
+@keyframes changementcouleur2 {
+    0% {
+        background-color: white;
+    }
+
+    100% {
+        background-color: rgb(143, 102, 166);
+    }
+}
+// Fin

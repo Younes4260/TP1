@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: theme-em
 Theme URI: http://underscores.me/
@@ -524,7 +525,7 @@ a {
 }
 
 a:visited {
-  color: #54289a;
+  color: #802aa1;
 }
 
 a:hover, a:focus, a:active {
@@ -776,11 +777,6 @@ Bouton burger
   transform: scale(0.99);
 }
 
-/*
-.main-navigation.toggled .menu-toggle{
-	transform : rotate(90deg);
-}
-*/
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block;
@@ -1096,7 +1092,7 @@ menu tablet
   margin: 0 2rem 0 2rem;
 }
 
-/* Local
+/* Accueil
 --------------------------------------------- */
 body::after {
   webkit-box-shadow: inset 0px 0px 23px 0px rgba(0, 0, 0, 0.75);
@@ -1149,28 +1145,9 @@ body.home {
   color: #efa6ef;
 }
 
-@keyframes changementcouleur1 {
-  0% {
-    background-color: #8f66a6;
-  }
-  100% {
-    background-color: white;
-  }
-}
-
-@keyframes changementcouleur2 {
-  0% {
-    background-color: white;
-  }
-  100% {
-    background-color: #8f66a6;
-  }
-}
-
 a {
   text-decoration: none;
   font-weight: bold;
-  color: #c80095;
 }
 
 article a {
@@ -1219,11 +1196,12 @@ body.home .site-title {
 
 /*--------------------------------------------------------------------------------------------------
 Liste de blocs par type de cours
+Contient du code supplémentaire pour réduire la taille des blocs et des textes en petit format
 -------------------------------------------------------------------------------------------------*/
 section {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  flex-wrap: wrap;
   margin-right: 100px;
 }
 
@@ -1242,9 +1220,24 @@ section article {
   transition: border 0.5s ease;
 }
 
+@media (max-width: 600px) {
+  section article {
+    width: 150px;
+    height: 100px;
+    border: 1px solid black;
+  }
+}
+
 section article p {
   margin: 1rem;
   font-size: 100%;
+}
+
+@media (max-width: 600px) {
+  section article p {
+    font-size: 50%;
+    margin: 0;
+  }
 }
 
 section article a {
@@ -1254,25 +1247,25 @@ section article a {
   text-align: center;
 }
 
-article:hover {
+@media (max-width: 600px) {
+  section article a {
+    font-size: 75%;
+  }
+}
+
+section article:hover {
   background-color: #721f62;
   border: 5px solid grey;
 }
 
-@media (min-width: 600px) {
-  article article {
-    width: 45%;
-    margin: 1%;
+@media (max-width: 600px) {
+  section article:hover {
+    border: 1px solid grey;
   }
 }
 
-@media (min-width: 1000px) {
-  article article {
-    width: 29%;
-    margin: 1%;
-  }
-}
-
+/* Carrousel
+--------------------------------------------- */
 header {
   width: 100vw;
 }
@@ -1298,8 +1291,9 @@ input {
   display: flex;
   width: 300vw;
   height: 15vh;
-  margin: 0 -2rem;
+  margin: 0 -3rem;
   transition: transform 0.5s ease;
+  overflow-x: hidden;
 }
 
 .carrousel div {
@@ -1308,6 +1302,14 @@ input {
   align-items: center;
   justify-content: center;
   font-size: 2rem;
+  padding: 0 1em;
+}
+
+@media (max-width: 600px) {
+  .carrousel div {
+    font-size: 1rem;
+    padding: 0 2em;
+  }
 }
 
 .carrousel div:nth-of-type(1) {
@@ -1326,4 +1328,24 @@ input {
   background-color: rgba(199, 61, 217, 0.5);
   width: 100vw;
   height: 100px;
+}
+
+/* Animation
+--------------------------------------------- */
+@keyframes changementcouleur1 {
+  0% {
+    background-color: #8f66a6;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+@keyframes changementcouleur2 {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: #8f66a6;
+  }
 }

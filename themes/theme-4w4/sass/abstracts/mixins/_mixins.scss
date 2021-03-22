@@ -24,3 +24,10 @@ $tablet_accueil: 600px;
 		@content;
 	}
 }
+
+@mixin mobile {
+
+	@media (max-width: #{$tablet_accueil}) {
+		@content;
+	}
+}
